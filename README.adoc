@@ -1,0 +1,86 @@
+= Contract with souvenir NFT
+
+Smart contract used as souvenir NFT for participating in the Barcelona DevCentralized workshop (https://github.com/andrzej-casper/pixel-rate[PixelRate application]). It is entirely based on https://github.com/casper-ecosystem/cep-78-enhanced-nft[CEP-78].
+
+[NOTE]
+.Relevant testnet details
+====
+* Contract deploy hash: https://testnet.cspr.live/deploy/d94c13902f85f397c82e3d5d0f154a4a8aefe57311a5e1c90db632c1ee29a1c1[d94c13902f85f397c82e3d5d0f154a4a8aefe57311a5e1c90db632c1ee29a1c1]
+* Contract package hash: https://testnet.cspr.live/contract-package/e2a6eb73c035bf553f817544c131dacecf79119223dd141a0e20cf44dd6b5e41[e2a6eb73c035bf553f817544c131dacecf79119223dd141a0e20cf44dd6b5e41]
+* Hash - version 1: https://testnet.cspr.live/contract/2b74b05d6ee5e0c4a5a9f88b0a526f691a78b472d8592e6d367c380a38638a5f[2b74b05d6ee5e0c4a5a9f88b0a526f691a78b472d8592e6d367c380a38638a5f]
+====
+
+== Requirements
+
+* curl
+* tar
+* casper-client
+
+== Usage
+
+[INFO]
+====
+We are using CEP-78 modalities, so we can rely on pre-compiled conract, instead of coding it on our own.
+====
+
+. Get compiled contract from release page:
++
+[source,bash]
+----
+$ curl --silent --location https://github.com/casper-ecosystem/cep-78-enhanced-nft/releases/download/v1.3.0/cep-78-wasm.tar.gz \
+  | tar xvz - -C ./cep-78
+----
+
+. Deploy our custom configured NFT to network (cost: ~260 CSPR):
+
+[source,bash]
+----
+$ casper-client put-deploy \
+  --id 1 \
+  --node-address http://135.181.216.142:7777 \
+  --chain-name casper-test \
+  --payment-amount 312000000000 \
+  --secret-key ~/wallets/07_alice/secret_key.pem \
+  --session-path ./cep-78/contract.wasm \
+  --session-arg "collection_name:string='devcentralized_barcelona_2023'" \
+  --session-arg "collection_symbol:string='DEVC_BCN_2023'" \
+  --session-arg "total_token_supply:u64='32'" \
+  --session-arg "ownership_mode:u8='1'" \
+  --session-arg "nft_kind:u8='2'" \
+  --session-arg "nft_metadata_kind:u8='3'" \
+  --session-arg "json_schema:string='{\"properties\":{\"user_message\":{\"name\":\"user_message\",\"description\":\"A message attached by the user.\",\"required\":false}}}'" \
+  --session-arg "identifier_mode:u8='0'" \
+  --session-arg "metadata_mutability:u8='0'" \
+  --session-arg "minting_mode:u8='0'" \
+  --session-arg "owner_reverse_lookup_mode:u8='1'"
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "api_version": "1.4.15",
+    "deploy_hash": "d94c13902f85f397c82e3d5d0f154a4a8aefe57311a5e1c90db632c1ee29a1c1"
+  }
+}
+----
+
+. Getting contract hash:
++
+[TIP]
+====
+Make sure you have `jq` tool installed, as it will be used for JSON parsing. Otherwise you can supply values manually.
+====
++
+[source,bash]
+----
+$ STATE_ROOT_HASH=`casper-client get-state-root-hash \
+  --id 2 \
+  --node-address http://135.181.216.142:7777 \
+  | jq -r .result.state_root_hash`
+$ casper-client query-global-state \
+  --id 3 \
+  --node-address http://135.181.216.142:7777 \
+  --state-root-hash ${STATE_ROOT_HASH} \
+  --key ~/wallets/07_alice/public_key_hex \
+  | jq -r ".result.stored_value.Account.named_keys[] | select(.name == \"cep78_contract_hash_devcentralized_barcelona_2023\") | .key"
+hash-2b74b05d6ee5e0c4a5a9f88b0a526f691a78b472d8592e6d367c380a38638a5f
+----
