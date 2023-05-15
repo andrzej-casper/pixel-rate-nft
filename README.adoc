@@ -48,7 +48,7 @@ $ casper-client put-deploy \
   --session-arg "ownership_mode:u8='1'" \
   --session-arg "nft_kind:u8='2'" \
   --session-arg "nft_metadata_kind:u8='3'" \
-  --session-arg "json_schema:string='{\"properties\":{\"user_message\":{\"name\":\"user_message\",\"description\":\"A message attached by the user.\",\"required\":false}}}'" \
+  --session-arg "json_schema:string='{\"properties\":{\"user_message\":{\"name\":\"user_message\",\"description\":\"A message attached by the user.\",\"required\":true}}}'" \
   --session-arg "identifier_mode:u8='0'" \
   --session-arg "metadata_mutability:u8='0'" \
   --session-arg "minting_mode:u8='0'" \
