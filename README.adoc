@@ -33,6 +33,16 @@ $ curl --silent --location https://github.com/casper-ecosystem/cep-78-enhanced-n
 
 . Deploy our custom configured NFT to network (cost: ~260 CSPR):
 +
+[NOTE]
+====
+In the following examples we will be:
+
+* Using *CLI client* to operate - it can be installed with `$ cargo install casper-client`.
+* Operating in test chain called *testnet* - specifed in `--chain-name` parameter.
+* Sending commands to the one of https://testnet.cspr.live/tools/peers[connected peers] - specified in `--node-address` argument.
+* Identify with *account keys* located under `~/wallets/07_alice/` - they were generated with `casper-client keygen [PATH]`.
+====
++
 [source,bash]
 ----
 $ casper-client put-deploy \
