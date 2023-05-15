@@ -20,7 +20,7 @@ Smart contract used as souvenir NFT for participating in the Barcelona DevCentra
 
 [INFO]
 ====
-We are using CEP-78 modalities, so we can rely on pre-compiled conract, instead of coding it on our own.
+We are using CEP-78 modalities, so we can rely on pre-compiled contract, instead of coding it on our own.
 ====
 
 . Get compiled contract from release page:
