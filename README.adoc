@@ -84,3 +84,34 @@ $ casper-client query-global-state \
   | jq -r ".result.stored_value.Account.named_keys[] | select(.name == \"cep78_contract_package_devcentralized_barcelona_2023\") | .key"
 hash-07edc543bf31adc4a1ece3f8622ef44153316e1639cb6badebad0367a52b8804
 ----
+
+. Minting NFT (cost: ~3 CSPR):
++
+[NOTE]
+====
+* Replace `token_owner` value in `--session-arg` with the account hash that you want to own the new NFT.
+* Make sure you supplied contract's package hash to `--session-package-hash` parameter, along with `hash-` prefix.
+* You can customize `user_message`, which is passed as token metadata.
+====
++
+[source,bash]
+----
+$ casper-client put-deploy \
+  --id 4 \
+  --node-address http://135.181.216.142:7777 \
+  --chain-name casper-test \
+  --payment-amount 4500000000 \
+  --secret-key ~/wallets/07_alice/secret_key.pem \
+  --session-package-hash hash-07edc543bf31adc4a1ece3f8622ef44153316e1639cb6badebad0367a52b8804 \
+  --session-entry-point "mint" \
+  --session-arg "token_owner:key='account-hash-7188948fdc3d97a762fcd62f8b17ef128e5d38d09ce535cc97df3c5931369b90'" \
+  --session-arg "token_meta_data:string='{\"user_message\": \"My first NFT! An exciting step in my digital journey.\"}'"
+{
+  "jsonrpc": "2.0",
+  "id": 4,
+  "result": {
+    "api_version": "1.4.15",
+    "deploy_hash": "e3dadd7ffaa6ae9bae9372fbba4d96939256bdfdf8dfc85d44dc4c7f07f2f6f0"
+  }
+}
+----
