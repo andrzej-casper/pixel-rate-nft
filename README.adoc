@@ -32,7 +32,7 @@ $ curl --silent --location https://github.com/casper-ecosystem/cep-78-enhanced-n
 ----
 
 . Deploy our custom configured NFT to network (cost: ~260 CSPR):
-
++
 [source,bash]
 ----
 $ casper-client put-deploy \
@@ -94,6 +94,7 @@ Since *reverse lookup* was enabled for this collection, we must register each ow
 * Replace `token_owner` value in `--session-arg` with the account hash that you want to own the new NFT.
 * Make sure you supplied contract's package hash to `--session-package-hash` parameter, along with `hash-` prefix.
 ====
++
 [source,bash]
 ----
 $ casper-client put-deploy \
