@@ -54,7 +54,7 @@ $ casper-client put-deploy \
   --session-path ./cep-78/contract.wasm \
   --session-arg "collection_name:string='devcentralized_barcelona_2023'" \
   --session-arg "collection_symbol:string='DEVC_BCN_2023'" \
-  --session-arg "total_token_supply:u64='32'" \
+  --session-arg "total_token_supply:u64='100'" \
   --session-arg "ownership_mode:u8='1'" \
   --session-arg "nft_kind:u8='2'" \
   --session-arg "nft_metadata_kind:u8='3'" \
