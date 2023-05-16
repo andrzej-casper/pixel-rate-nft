@@ -111,7 +111,7 @@ $ casper-client put-deploy \
   --id 4 \
   --node-address http://135.181.216.142:7777 \
   --chain-name casper-test \
-  --payment-amount 200000000 \
+  --payment-amount 2000000000 \
   --secret-key ~/wallets/07_alice/secret_key.pem \
   --session-package-hash hash-e2a6eb73c035bf553f817544c131dacecf79119223dd141a0e20cf44dd6b5e41 \
   --session-entry-point "register_owner" \
