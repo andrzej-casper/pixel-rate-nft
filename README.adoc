@@ -5,9 +5,9 @@ Smart contract used as souvenir NFT for participating in the Barcelona DevCentra
 [NOTE]
 .Relevant testnet details
 ====
-* Contract deploy hash: https://testnet.cspr.live/deploy/d94c13902f85f397c82e3d5d0f154a4a8aefe57311a5e1c90db632c1ee29a1c1[d94c13902f85f397c82e3d5d0f154a4a8aefe57311a5e1c90db632c1ee29a1c1]
-* Contract package hash: https://testnet.cspr.live/contract-package/e2a6eb73c035bf553f817544c131dacecf79119223dd141a0e20cf44dd6b5e41[e2a6eb73c035bf553f817544c131dacecf79119223dd141a0e20cf44dd6b5e41]
-* Hash - version 1: https://testnet.cspr.live/contract/2b74b05d6ee5e0c4a5a9f88b0a526f691a78b472d8592e6d367c380a38638a5f[2b74b05d6ee5e0c4a5a9f88b0a526f691a78b472d8592e6d367c380a38638a5f]
+* Contract deploy hash: https://testnet.cspr.live/deploy/f7a902b600e24089a4cdeb383b7aae989e798006d68b7adbbbf40eae8d077a3c[f7a902b600e24089a4cdeb383b7aae989e798006d68b7adbbbf40eae8d077a3c]
+* Contract package hash: https://testnet.cspr.live/contract-package/07edc543bf31adc4a1ece3f8622ef44153316e1639cb6badebad0367a52b8804[07edc543bf31adc4a1ece3f8622ef44153316e1639cb6badebad0367a52b8804]
+* Hash - version 1: https://testnet.cspr.live/contract/c4f6b9af763a2728378d850ddd51100deb2c95a40fee0c4744cee470e28a081c[c4f6b9af763a2728378d850ddd51100deb2c95a40fee0c4744cee470e28a081c]
 ====
 
 == Requirements
@@ -68,7 +68,7 @@ $ casper-client put-deploy \
   "id": 1,
   "result": {
     "api_version": "1.4.15",
-    "deploy_hash": "d94c13902f85f397c82e3d5d0f154a4a8aefe57311a5e1c90db632c1ee29a1c1"
+    "deploy_hash": "f7a902b600e24089a4cdeb383b7aae989e798006d68b7adbbbf40eae8d077a3c"
   }
 }
 ----
@@ -92,7 +92,7 @@ $ casper-client query-global-state \
   --state-root-hash ${STATE_ROOT_HASH} \
   --key ~/wallets/07_alice/public_key_hex \
   | jq -r ".result.stored_value.Account.named_keys[] | select(.name == \"cep78_contract_package_devcentralized_barcelona_2023\") | .key"
-hash-e2a6eb73c035bf553f817544c131dacecf79119223dd141a0e20cf44dd6b5e41
+hash-691c5d3789896a66458bbf0decf3ac96e067af0453ccffe7fe295e5b244010b9
 ----
 
 . Registering owner (cost: ~1 CSPR):
@@ -113,7 +113,7 @@ $ casper-client put-deploy \
   --chain-name casper-test \
   --payment-amount 2000000000 \
   --secret-key ~/wallets/07_alice/secret_key.pem \
-  --session-package-hash hash-e2a6eb73c035bf553f817544c131dacecf79119223dd141a0e20cf44dd6b5e41 \
+  --session-package-hash hash-691c5d3789896a66458bbf0decf3ac96e067af0453ccffe7fe295e5b244010b9 \
   --session-entry-point "register_owner" \
   --session-arg "token_owner:key='account-hash-7188948fdc3d97a762fcd62f8b17ef128e5d38d09ce535cc97df3c5931369b90'"
 {
@@ -121,7 +121,7 @@ $ casper-client put-deploy \
   "id": 4,
   "result": {
     "api_version": "1.4.15",
-    "deploy_hash": "e3dadd7ffaa6ae9bae9372fbba4d96939256bdfdf8dfc85d44dc4c7f07f2f6f0"
+    "deploy_hash": "0bf1a2073ed35d00f841e97e1c0628b5d9e6ba72de4f3c56cb9e6b86810f7ce1"
   }
 }
 ----
@@ -141,7 +141,7 @@ $ casper-client put-deploy \
   --chain-name casper-test \
   --payment-amount 22000000000 \
   --secret-key ~/wallets/07_alice/secret_key.pem \
-  --session-package-hash hash-e2a6eb73c035bf553f817544c131dacecf79119223dd141a0e20cf44dd6b5e41 \
+  --session-package-hash hash-691c5d3789896a66458bbf0decf3ac96e067af0453ccffe7fe295e5b244010b9 \
   --session-entry-point "mint" \
   --session-arg "token_owner:key='account-hash-7188948fdc3d97a762fcd62f8b17ef128e5d38d09ce535cc97df3c5931369b90'" \
   --session-arg "token_meta_data:string='{\"user_message\": \"My first NFT! An exciting step in my digital journey.\"}'"
@@ -150,7 +150,7 @@ $ casper-client put-deploy \
   "id": 5,
   "result": {
     "api_version": "1.4.15",
-    "deploy_hash": "8ba0435d35a272642fe5332366fda6d0555ceaad53ca822dce948316f8326a5c"
+    "deploy_hash": "bc140e454376cc67ebd612f8f4a0c0191e8a8a6d80aae7eb6ab7cb0239c0af00"
   }
 }
 ----
