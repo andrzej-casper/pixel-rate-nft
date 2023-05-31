@@ -3,10 +3,14 @@
 Smart contract used as souvenir NFT for participating in the Barcelona DevCentralized workshop (https://github.com/andrzej-casper/pixel-rate[PixelRate application]). It is entirely based on https://github.com/casper-ecosystem/cep-78-enhanced-nft[CEP-78].
 
 [NOTE]
-.Relevant testnet details
+.Relevant deployment details
 ====
-* Contract deploy hash: https://testnet.cspr.live/deploy/71fda3549d98a7b560f86efeb4862fafc03fb1f8700bf4d1dc499a813759ed27[71fda3549d98a7b560f86efeb4862fafc03fb1f8700bf4d1dc499a813759ed27]
-* Contract package hash: https://testnet.cspr.live/contract-package/9be829995490bf1c3fc86b5f16adc44526d2c3d430a42ae591960d6cc254821c[9be829995490bf1c3fc86b5f16adc44526d2c3d430a42ae591960d6cc254821c]
+* Contract deploy hash
+** Testnet: https://testnet.cspr.live/deploy/71fda3549d98a7b560f86efeb4862fafc03fb1f8700bf4d1dc499a813759ed27[71fda3549d98a7b560f86efeb4862fafc03fb1f8700bf4d1dc499a813759ed27]
+** Mainnet: https://testnet.cspr.live/deploy/6a742e16d3768018a7c5d0ba5a77d40878827371e099f3eb0c951d3a78f72775[6a742e16d3768018a7c5d0ba5a77d40878827371e099f3eb0c951d3a78f72775]
+* Contract package hash
+** Testnet: https://testnet.cspr.live/contract-package/9be829995490bf1c3fc86b5f16adc44526d2c3d430a42ae591960d6cc254821c[9be829995490bf1c3fc86b5f16adc44526d2c3d430a42ae591960d6cc254821c]
+** Mainnet: https://testnet.cspr.live/contract-package/7570c0a89f7749de8c5aa28a3f717f599bb5def910087950d89c412b205bc66d[7570c0a89f7749de8c5aa28a3f717f599bb5def910087950d89c412b205bc66d]
 ====
 
 == Requirements
