@@ -128,3 +128,15 @@ $ casper-client put-deploy \
   }
 }
 ----
+
+== Souvenir release
+
+Souvenir tokens were issued for 5 workshop attendees: 
+
+-  https://cspr.live/contracts/7570c0a89f7749de8c5aa28a3f717f599bb5def910087950d89c412b205bc66d/nfts/0
+-  https://cspr.live/contracts/7570c0a89f7749de8c5aa28a3f717f599bb5def910087950d89c412b205bc66d/nfts/1
+-  https://cspr.live/contracts/7570c0a89f7749de8c5aa28a3f717f599bb5def910087950d89c412b205bc66d/nfts/2
+-  https://cspr.live/contracts/7570c0a89f7749de8c5aa28a3f717f599bb5def910087950d89c412b205bc66d/nfts/3
+-  https://cspr.live/contracts/7570c0a89f7749de8c5aa28a3f717f599bb5def910087950d89c412b205bc66d/nfts/4
+
+If you particpated in the workshop and still want to claim your NFT, please send email to andrzej@casper.network.
