@@ -95,7 +95,7 @@ $ casper-client query-global-state \
 hash-9be829995490bf1c3fc86b5f16adc44526d2c3d430a42ae591960d6cc254821c
 ----
 
-. Minting NFT (cost: ~11 CSPR):
+. Minting NFT (cost: ~4 CSPR):
 +
 [NOTE]
 ====
@@ -110,7 +110,7 @@ $ casper-client put-deploy \
   --id 4 \
   --node-address http://135.181.216.142:7777 \
   --chain-name casper-test \
-  --payment-amount 22000000000 \
+  --payment-amount 11000000000 \
   --secret-key ~/wallets/07_alice/secret_key.pem \
   --session-package-hash hash-9be829995490bf1c3fc86b5f16adc44526d2c3d430a42ae591960d6cc254821c \
   --session-entry-point "mint" \
