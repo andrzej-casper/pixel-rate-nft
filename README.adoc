@@ -7,7 +7,6 @@ Smart contract used as souvenir NFT for participating in the Barcelona DevCentra
 ====
 * Contract deploy hash: https://testnet.cspr.live/deploy/71fda3549d98a7b560f86efeb4862fafc03fb1f8700bf4d1dc499a813759ed27[71fda3549d98a7b560f86efeb4862fafc03fb1f8700bf4d1dc499a813759ed27]
 * Contract package hash: https://testnet.cspr.live/contract-package/9be829995490bf1c3fc86b5f16adc44526d2c3d430a42ae591960d6cc254821c[9be829995490bf1c3fc86b5f16adc44526d2c3d430a42ae591960d6cc254821c]
-* Hash - version 1: https://testnet.cspr.live/contract/24446babec85b7e4161cdcf9c1c546c48bcc08af8f3a5dabfe4c43db9024128a[24446babec85b7e4161cdcf9c1c546c48bcc08af8f3a5dabfe4c43db9024128a]
 ====
 
 == Requirements
