@@ -57,8 +57,7 @@ $ casper-client put-deploy \
   --session-arg "total_token_supply:u64='8'" \
   --session-arg "ownership_mode:u8='1'" \
   --session-arg "nft_kind:u8='2'" \
-  --session-arg "nft_metadata_kind:u8='3'" \
-  --session-arg "json_schema:string='{\"properties\":{\"user_message\":{\"name\":\"user_message\",\"description\":\"A message attached by the user.\",\"required\":true}}}'" \
+  --session-arg "nft_metadata_kind:u8='0'" \
   --session-arg "identifier_mode:u8='0'" \
   --session-arg "metadata_mutability:u8='0'" \
   --session-arg "minting_mode:u8='0'" \
@@ -100,7 +99,9 @@ hash-691c5d3789896a66458bbf0decf3ac96e067af0453ccffe7fe295e5b244010b9
 +
 [NOTE]
 ====
-* You can customize `user_message`, which is passed as token metadata.
+* You can customize NFT `name`, which is passed in token metadata.
+
+* Image in below example - `token_uri` - was created using https://nightcafe.studio[NightCafe] and stored in IPFS using https://www.pinata.cloud[Pinata]; `checksum` is sha256 hash of that file. You can also find it in this repository at `./souvenir.jpg`.
 ====
 +
 [source,bash]
@@ -114,7 +115,7 @@ $ casper-client put-deploy \
   --session-package-hash hash-691c5d3789896a66458bbf0decf3ac96e067af0453ccffe7fe295e5b244010b9 \
   --session-entry-point "mint" \
   --session-arg "token_owner:key='account-hash-7188948fdc3d97a762fcd62f8b17ef128e5d38d09ce535cc97df3c5931369b90'" \
-  --session-arg "token_meta_data:string='{\"user_message\": \"My first NFT! An exciting step in my digital journey.\"}'"
+  --session-arg "token_meta_data:string='{\"name\":\"[DevCentralized] Casper Workshop Attendee Souvenir NFT\",\"token_uri\": \"https://pin.ski/3C0VedZ\",\"checksum\":\"456050015873156be7d815b11dc0edf065828052f630de3e9d6c011806568631\"}'"
 {
   "jsonrpc": "2.0",
   "id": 4,
