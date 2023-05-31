@@ -28,7 +28,7 @@ We are using CEP-78 modalities, so we can rely on pre-compiled contract, instead
 [source,bash]
 ----
 $ curl --silent --location https://github.com/casper-ecosystem/cep-78-enhanced-nft/releases/download/v1.3.0/cep-78-wasm.tar.gz \
-  | tar xvz - -C ./cep-78
+  | tar xvz -C ./cep-78
 ----
 
 . Deploy our custom configured NFT to network (cost: ~260 CSPR):
