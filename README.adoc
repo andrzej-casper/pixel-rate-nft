@@ -62,6 +62,7 @@ $ casper-client put-deploy \
   --session-arg "identifier_mode:u8='0'" \
   --session-arg "metadata_mutability:u8='0'" \
   --session-arg "minting_mode:u8='0'" \
+  --session-arg "events_mode:u8='2'" \
   --session-arg "owner_reverse_lookup_mode:u8='0'"
 {
   "jsonrpc": "2.0",
