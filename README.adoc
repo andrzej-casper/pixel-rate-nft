@@ -62,7 +62,7 @@ $ casper-client put-deploy \
   --session-arg "identifier_mode:u8='0'" \
   --session-arg "metadata_mutability:u8='0'" \
   --session-arg "minting_mode:u8='0'" \
-  --session-arg "owner_reverse_lookup_mode:u8='1'"
+  --session-arg "owner_reverse_lookup_mode:u8='0'"
 {
   "jsonrpc": "2.0",
   "id": 1,
@@ -95,37 +95,6 @@ $ casper-client query-global-state \
 hash-691c5d3789896a66458bbf0decf3ac96e067af0453ccffe7fe295e5b244010b9
 ----
 
-. Registering owner (cost: ~1 CSPR):
-+
-[IMPORTANT]
-====
-Since *reverse lookup* was enabled for this collection, we must register each owner before minting NFT.
-
-* Replace `token_owner` value in `--session-arg` with the account hash that you want to own the new NFT.
-* Make sure you supplied contract's package hash to `--session-package-hash` parameter, along with `hash-` prefix.
-====
-+
-[source,bash]
-----
-$ casper-client put-deploy \
-  --id 4 \
-  --node-address http://135.181.216.142:7777 \
-  --chain-name casper-test \
-  --payment-amount 2000000000 \
-  --secret-key ~/wallets/07_alice/secret_key.pem \
-  --session-package-hash hash-691c5d3789896a66458bbf0decf3ac96e067af0453ccffe7fe295e5b244010b9 \
-  --session-entry-point "register_owner" \
-  --session-arg "token_owner:key='account-hash-7188948fdc3d97a762fcd62f8b17ef128e5d38d09ce535cc97df3c5931369b90'"
-{
-  "jsonrpc": "2.0",
-  "id": 4,
-  "result": {
-    "api_version": "1.4.15",
-    "deploy_hash": "0bf1a2073ed35d00f841e97e1c0628b5d9e6ba72de4f3c56cb9e6b86810f7ce1"
-  }
-}
-----
-
 . Minting NFT (cost: ~11 CSPR):
 +
 [NOTE]
@@ -136,7 +105,7 @@ $ casper-client put-deploy \
 [source,bash]
 ----
 $ casper-client put-deploy \
-  --id 5 \
+  --id 4 \
   --node-address http://135.181.216.142:7777 \
   --chain-name casper-test \
   --payment-amount 22000000000 \
@@ -147,7 +116,7 @@ $ casper-client put-deploy \
   --session-arg "token_meta_data:string='{\"user_message\": \"My first NFT! An exciting step in my digital journey.\"}'"
 {
   "jsonrpc": "2.0",
-  "id": 5,
+  "id": 4,
   "result": {
     "api_version": "1.4.15",
     "deploy_hash": "bc140e454376cc67ebd612f8f4a0c0191e8a8a6d80aae7eb6ab7cb0239c0af00"
